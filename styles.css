@@ -17,6 +17,7 @@ body {
 }
 
 /* Navigation */
+
 nav {
     background-color: rgba(0, 0, 0, 0.9);
     position: fixed;
@@ -38,32 +39,169 @@ nav.shrink {
     color: #fff;
 }
 
-.nav-links {
+#menu {
     list-style: none;
 }
 
-.nav-links li {
+#menu li {
     display: inline-block;
     margin-right: 10px;
 }
 
-.nav-links a {
+#menu a {
     color: #fff;
     text-decoration: none;
     padding: 5px;
 }
 
-/* Add padding to the body to make space for the fixed navigation bar */
-body {
-    padding-top: 80px;
+#checkbox {
+    opacity: 0;
 }
+
+@media (max-width: 750px) {
+.logo {
+        font-size: 20px;
+        font-weight: bold;
+        margin-right: 20px;
+        color: #fff;
+    }
+#menuToggle {
+        display: block;
+        position: relative;
+        /* top: 25px;
+        left: 50px;
+
+        z-index: 1; */
+                top: 0;
+                right: -600px;
+                text-align: left;
+                z-index: 2;
+
+        -webkit-user-select: none;
+        user-select: none;
+    }
+
+    #menuToggle a {
+        text-decoration: none;
+        color: #fff;
+
+        transition: color 0.3s ease;
+    }
+
+    #menuToggle a:hover {
+        color: #232323;
+    }
+
+
+    #menuToggle input {
+        display: block;
+        width: 40px;
+        height: 32px;
+        position: absolute;
+        top: -7px;
+        left: -5px;
+
+        cursor: pointer;
+
+        opacity: 0;
+
+        z-index: 2;
+
+
+        -webkit-touch-callout: none;
+    }
+
+
+    #menuToggle span {
+        display: block;
+        width: 40px;
+        height: 6px;
+        margin-bottom: 5px;
+        position: relative;
+
+        background: #e64c00;
+        border-radius: 10px;
+        border-color: #fff;
+
+        z-index: 1;
+
+        transform-origin: 4px 0px;
+
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+            background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+            opacity 0.55s ease;
+    }
+
+    #menuToggle span:first-child {
+        transform-origin: 0% 0%;
+    }
+
+    #menuToggle span:nth-last-child(2) {
+        transform-origin: 0% 100%;
+    }
+
+
+    #menuToggle input:checked~span {
+        opacity: 1;
+        transform: rotate(45deg) translate(-2px, -1px);
+        background: #fff;
+    }
+
+
+    #menuToggle input:checked~span:nth-last-child(3) {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+    }
+
+
+    #menuToggle input:checked~span:nth-last-child(2) {
+        transform: rotate(-45deg) translate(0, -1px);
+    }
+
+
+    #menu {
+        position: absolute;
+        width: 250px;
+        margin: -100px 0 0 -150px;
+        padding: 50px;
+        padding-top: 125px;
+
+        background: #e64c00;
+        list-style-type: none;
+        -webkit-font-smoothing: antialiased;
+
+
+        transform-origin: 0% 0%;
+        transform: translate(100%, 0);
+
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    }
+
+    #menu li {
+        padding: 10px 0;
+        font-size: 22px;
+    }
+
+
+    #menuToggle input:checked~ul {
+        transform: none;
+    }
+}
+/* Add padding to the body to make space for the fixed navigation bar */
+/* body {
+    padding-top: 80px;
+} */
+
+/* Media query for small screens */
+
 
 /* Hero section */
 .hero {
     background-image: url('hero-image.jpg');
     background-size: cover;
     background-position: center;
-    height: 500px;
+    /* height: 500px; */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -253,6 +391,7 @@ body {
     font-size: 18px;
     color: #555;
 }
+
 .team-member {
     display: inline-block;
     width: 200px;

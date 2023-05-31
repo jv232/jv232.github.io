@@ -58,7 +58,7 @@ nav.shrink {
     opacity: 0;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 700px) {
 .logo {
         font-size: 20px;
         font-weight: bold;
@@ -68,12 +68,13 @@ nav.shrink {
 #menuToggle {
         display: block;
         position: relative;
+        float: right;
         /* top: 25px;
         left: 50px;
 
         z-index: 1; */
                 top: 0;
-                right: -600px;
+                left: auto;
                 text-align: left;
                 z-index: 2;
 
@@ -161,9 +162,9 @@ nav.shrink {
 
     #menu {
         position: absolute;
-        width: 250px;
-        margin: -100px 0 0 -150px;
-        padding: 50px;
+        width: 200px;
+        margin: -100px 0 0 -100px;
+        padding: 20px;
         padding-top: 125px;
 
         background: #e64c00;
